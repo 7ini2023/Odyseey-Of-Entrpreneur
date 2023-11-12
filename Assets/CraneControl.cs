@@ -8,6 +8,7 @@ public class CraneControl : NetworkBehaviour
     public float rotationSpeed = 50f;
     public float armMovementSpeed = 1f;
     public GameObject hookPrefab;
+    public Camera playerCamera;
 
     private Transform craneArm;
     private GameObject hookObject;
@@ -15,7 +16,9 @@ public class CraneControl : NetworkBehaviour
 
     private void Start()
     {
-        craneArm = transform.Find("CraneArm"); // Adjust the name accordingly
+        craneArm = transform.Find("Front_Crane"); // Adjust the name accordingly
+        playerCamera = GetComponentInChildren<Camera>();
+        playerCamera.enabled = true;
     }
 
     private void Update()

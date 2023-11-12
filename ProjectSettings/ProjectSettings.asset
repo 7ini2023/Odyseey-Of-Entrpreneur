@@ -788,7 +788,12 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -803,10 +808,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 828a45c3-4db2-492f-a295-365acbae5aee
+  cloudProjectId: 0ecb45b1-2c10-4617-a9fb-c5563b7f1d53
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Odyssey Of Entrepreneur2.0
+  projectName: Odyssey Of Entrepreneur2.0 (1)
   organizationId: unity_3ff0bd9f6b6a6f8095c8
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

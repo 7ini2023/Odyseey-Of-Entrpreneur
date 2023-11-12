@@ -13,7 +13,7 @@ public class NetworkAnimateHandOnInput : NetworkBehaviour
     {
         if(IsOwner){
             float triggerValue = pinchAnimationAction.action.ReadValue<float>();
-            handAnimator.SetFloat("Pinch", triggerValue);  
+            handAnimator.SetFloat("Trigger", triggerValue);  
 
             float gripValue = gripAnimationAction.action.ReadValue<float>();
             handAnimator.SetFloat("Grip", gripValue);
