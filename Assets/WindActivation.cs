@@ -11,9 +11,26 @@ public class WindActivation : NetworkBehaviour
     public float maxWindStrength = 10f; // Adjust as needed
     public float windIncreaseRate = 1f; // Adjust as needed
 
+    public event System.Action<bool> OnWindActivationChanged; // Event to trigger when windActive changes
+
     private void Start()
     {
         windZone = GetComponent<WindZone>();
+        windActive.OnValueChanged += OnWindActiveValueChanged; // Subscribe to the OnValueChanged event
+    }
+
+    private void OnDestroy()
+    {
+        windActive.OnValueChanged -= OnWindActiveValueChanged; // Unsubscribe from the OnValueChanged event
+    }
+
+    private void OnWindActiveValueChanged(bool oldVal, bool newVal)
+    {
+        // Notify subscribers that wind activation has changed
+        if (OnWindActivationChanged != null)
+        {
+            OnWindActivationChanged(newVal);
+        }
     }
 
     private void Update()

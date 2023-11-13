@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Unity.Netcode;
 
 public class WindButton : NetworkBehaviour
@@ -9,6 +10,7 @@ public class WindButton : NetworkBehaviour
    public GameObject button;
     public UnityEvent OnPress;
     public UnityEvent OnRelease;
+    public Text windLogText;
     GameObject presser;
     AudioSource sound;
     bool isPressed;
@@ -17,6 +19,11 @@ public class WindButton : NetworkBehaviour
     {
       sound = GetComponent<AudioSource>();
       isPressed = false;
+
+      if(windActivation != null && IsOwner)
+      {
+        windActivation.windActive.OnValueChanged += UpdateWindLog;
+      }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,8 +54,29 @@ public class WindButton : NetworkBehaviour
         {
             // Trigger the wind activation
             windActivation.ToggleWind();
+            UpdateWindLog(windActivation.windActive.Value, windActivation.windActive.Value);
+        }  
+    }
+
+    // Update the wind log text when wind activation changes
+    private void UpdateWindLog(bool oldVal, bool newVal)
+    {
+        if (newVal)
+        {
+            windLogText.text = "Wind Force: Active";
         }
-        
-        
+        else
+        {
+            windLogText.text = "Wind Force: Inactive";
+        }
+    }
+
+    // Clean up event subscriptions
+    private void OnDestroy()
+    {
+        if (windActivation != null && IsOwner)
+        {
+            windActivation.windActive.OnValueChanged -= UpdateWindLog;
+        }
     }
 }
