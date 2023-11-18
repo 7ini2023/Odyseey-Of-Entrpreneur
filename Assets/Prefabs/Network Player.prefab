@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3398605315800312442}
   - component: {fileID: 8412879053981420480}
   - component: {fileID: 1120899683710796706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Network Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,20 +371,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6077958765926306667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5721647902455497194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6187370863759760246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ca7aa2e38fd5c43874bad2b2964287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TransitionStateInfoList: []
-  m_Animator: {fileID: 6187370863769282752}
 --- !u!114 &327723925453894866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +410,20 @@ MonoBehaviour:
     m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   handAnimator: {fileID: 6187370863769282752}
+--- !u!114 &5721647902455497194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187370863759760246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca7aa2e38fd5c43874bad2b2964287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 6187370863769282752}
 --- !u!4 &6187370863760181014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b,
